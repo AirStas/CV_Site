@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Станислав Холькин — разработка и инфраструктура</title>
+  <meta name="description" content="Станислав Холькин: младший пресейл-инженер Orion soft, студент ИУ7 МГТУ им. Н. Э. Баумана. C/C++, Python, Django, виртуализация, сети.">
+  <meta property="og:title" content="Станислав Холькин">
+  <meta property="og:description" content="Младший пресейл-инженер Orion soft, студент программной инженерии МГТУ им. Н. Э. Баумана.">
+  <meta property="og:image" content="/assets/photo.jpg">
+  <meta property="og:type" content="profile">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='14' fill='%234f5bd5'/><text x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' font-family='Arial' font-weight='700' font-size='28' fill='white'>СХ</text></svg>">
+
+  <!-- Тема ставится до отрисовки, чтобы не было мигания -->
+  <script>
+    (function () {
+      var t = null;
+      try { t = localStorage.getItem('theme'); } catch (e) {}
+      if (t !== 'light' && t !== 'dark') {
+        t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
+      document.documentElement.setAttribute('data-theme', t);
+      document.documentElement.classList.add('js');
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body id="top">
+
+<!-- ШАПКА: плавающее меню -->
+<header class="nav">
+  <div class="nav__bar">
+    <nav class="nav__links" aria-label="Разделы">
+      <a href="#about">Обо мне</a>
+      <a href="#skills">Навыки</a>
+      <a href="#projects">Проекты</a>
+      <a href="#path">Опыт</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+    <span class="nav__divider" aria-hidden="true"></span>
+    <button class="theme-toggle" id="themeToggle" type="button" aria-label="Переключить тему">
+      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8M18 18l1.8 1.8M2 12h2.5M19.5 12H22M4.2 19.8 6 18M18 6l1.8-1.8"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.5A8.5 8.5 0 0 1 9.5 3.5a8.5 8.5 0 1 0 11 11Z"/></svg>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <h1 class="hero__title reveal">
+          Станислав<br>Холькин
+        </h1>
+        <p class="hero__role reveal">Разработка и инфраструктура&nbsp;· студент <span class="mono">ИУ7</span> МГТУ им.&nbsp;Н.&nbsp;Э.&nbsp;Баумана</p>
+        <p class="hero__lead reveal">
+          Пишу на C/C++ и Python, делаю веб-приложения на Django, работаю с ML и машинным зрением.
+          В Orion soft разбираюсь в виртуализации zVirt, программно-определяемых сетях и инфраструктуре.
+        </p>
+        <div class="hero__actions reveal">
+          <a class="btn btn--primary" href="assets/Kholkin_Stanislav_CV.pdf" download>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+            Скачать резюме
+          </a>
+          <a class="btn btn--ghost" href="#contact">Связаться</a>
+        </div>
+      </div>
+
+      <div class="hero__photo reveal">
+        <div class="photo-frame">
+          <img src="assets/photo.jpg" alt="Станислав Холькин" width="424" height="636">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <ul class="stats">
+        <li class="stat reveal"><span class="stat__value">Orion soft</span><span class="stat__label">Младший пресейл-инженер с апреля 2026</span></li>
+        <li class="stat reveal"><span class="stat__value">3 курс</span><span class="stat__label">Программная инженерия, МГТУ им. Баумана</span></li>
+        <li class="stat reveal"><span class="stat__value">ВсОШ</span><span class="stat__label">Победитель 2023, призёр 2024 по технологии</span></li>
+        <li class="stat reveal"><span class="stat__value">Грант</span><span class="stat__label">Президента Российской Федерации</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="section" id="about">
+    <div class="container about">
+      <div class="section__head reveal">
+        <span class="section__index mono">01</span>
+        <h2>Обо мне</h2>
+      </div>
+      <div class="about__body reveal">
+        <p class="about__big">
+          Люблю задачи, которые нужно провести через весь цикл: от идеи и расчётов до работающего результата и документации.
+        </p>
+        <p>
+          Учусь на 3 курсе кафедры ИУ7 «Программная инженерия» факультета «Информатика и системы управления» МГТУ им. Н. Э. Баумана.
+          В учёбе и своих проектах пишу на C/C++ и Python, делаю сайты на Django, автоматизирую рутину на Bash
+          и разворачиваю сервисы в Docker.
+        </p>
+        <p>
+          С апреля 2026 года работаю младшим пресейл-инженером в Orion soft: изучил платформу виртуализации zVirt,
+          SDN и заметно прокачался в сетях и инфраструктуре. Теперь понимаю не только как написать код,
+          но и на чём и как он будет работать.
+        </p>
+        <p>
+          Инженерное мышление пришло из олимпиад: проект с беспилотником научил разбивать сложную задачу на этапы
+          и искать нестандартные решения. Умение ясно объяснять проверено на практике: летом 2024 года
+          преподавал школьникам 3D-печать и аэродинамику.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index mono">02</span>
+        <h2>Навыки</h2>
+      </div>
+      <div class="skills">
+        <article class="card card--wide reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></div>
+          <h3>Разработка</h3>
+          <ul class="tags"><li>C</li><li>C++</li><li>Python</li><li>Django</li><li>Bash</li><li>Git</li><li>Docker</li><li>HTML/CSS/JS</li></ul>
+          <p>Алгоритмы и структуры данных, модульная архитектура, тестирование, веб-приложения на Django, скрипты автоматизации и контейнеризация сервисов.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="7" rx="1.5"/><rect x="3" y="14" width="18" height="7" rx="1.5"/><path d="M7 6.5h.01M7 17.5h.01"/></svg></div>
+          <h3>Инфраструктура и сети</h3>
+          <ul class="tags"><li>zVirt</li><li>Виртуализация</li><li>SDN</li><li>Сети</li><li>Linux</li><li>nginx</li></ul>
+          <p>Серверная виртуализация, программно-определяемые сети, развёртывание сервисов в Linux.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/></svg></div>
+          <h3>Данные и ML</h3>
+          <ul class="tags"><li>Анализ данных</li><li>Машинное зрение</li><li>Обучение моделей</li></ul>
+          <p>Обработка и анализ информации, обучение систем ИИ на Python.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 3 7v10l9 5 9-5V7l-9-5Z"/><path d="m3 7 9 5 9-5M12 12v10"/></svg></div>
+          <h3>Инженерия</h3>
+          <ul class="tags"><li>Fusion 360</li><li>Компас-3D</li><li>ANSYS</li><li>3D-печать</li><li>Arduino</li></ul>
+          <p>3D-проектирование, аэродинамический анализ, прототипирование и микроконтроллеры.</p>
+        </article>
+        <article class="card reveal">
+          <div class="card__icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
+          <h3>Коммуникация</h3>
+          <ul class="tags"><li>English advanced</li><li>Пресейл</li><li>Преподавание</li></ul>
+          <p>Свободно говорю и читаю техническую документацию на английском, умею объяснять сложное простыми словами.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index mono">03</span>
+        <h2>Проекты</h2>
+      </div>
+
+      <article class="project project--featured reveal">
+        <div class="project__media">
+          <img src="assets/uav.jpg" alt="3D-модель углепластикового БПЛА с авторской схемой крыла" width="1250" height="560" loading="lazy">
+        </div>
+        <div class="project__content">
+          <div class="project__meta">
+            <span class="pill pill--accent">Победа ВсОШ 2023 · Призёр 2024</span>
+            <span class="mono muted">Инженерный проект</span>
+          </div>
+          <h3>Углепластиковый БПЛА с авторской схемой крыла</h3>
+          <p>
+            Полный цикл сложного инженерно-технического проекта: математическое моделирование, 3D-проектирование,
+            аэродинамический анализ, производство и лётные испытания.
+          </p>
+          <ol class="pipeline">
+            <li><span class="mono">01</span>Моделирование</li>
+            <li><span class="mono">02</span>Fusion 360 / Компас-3D</li>
+            <li><span class="mono">03</span>Анализ в ANSYS</li>
+            <li><span class="mono">04</span>Фрезеровка, лазер, 3D-печать</li>
+            <li><span class="mono">05</span>Электроника на Arduino</li>
+            <li><span class="mono">06</span>Испытания</li>
+          </ol>
+        </div>
+      </article>
+
+      <div class="projects">
+        <article class="project reveal">
+          <div class="project__meta"><span class="pill">Веб</span></div>
+          <h3>Сайты на Django</h3>
+          <p>Веб-приложения на Python и Django: от модели данных до готового сайта.</p>
+          <ul class="tags"><li>Python</li><li>Django</li></ul>
+        </article>
+        <article class="project reveal">
+          <div class="project__meta"><span class="pill">ML</span></div>
+          <h3>Машинное зрение и анализ данных</h3>
+          <p>Обучение моделей и анализ изображений на Python в рамках учёбы и собственных экспериментов.</p>
+          <ul class="tags"><li>Python</li><li>ML</li><li>CV</li></ul>
+        </article>
+        <article class="project reveal">
+          <div class="project__meta"><span class="pill">МГТУ им. Баумана</span></div>
+          <h3>Учебные проекты на C/C++</h3>
+          <p>Программные модули и курсовые работы: алгоритмы, структуры данных, работа с памятью, модульные тесты.</p>
+          <ul class="tags"><li>C</li><li>C++</li><li>Make</li></ul>
+        </article>
+        <article class="project reveal">
+          <div class="project__meta"><span class="pill">Автоматизация</span></div>
+          <h3>Bash-скрипты</h3>
+          <p>Скрипты для автоматического тестирования и системного администрирования.</p>
+          <ul class="tags"><li>Bash</li><li>Linux</li><li>Тестирование</li></ul>
+        </article>
+        <article class="project project--link reveal">
+          <div class="project__meta"><span class="pill">GitHub</span></div>
+          <h3>Весь код открыт</h3>
+          <p>Свежие проекты, учебные работы и эксперименты.</p>
+          <a class="link-arrow" href="https://github.com/AirStas" target="_blank" rel="noopener">github.com/AirStas <span aria-hidden="true">→</span></a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PATH -->
+  <section class="section" id="path">
+    <div class="container">
+      <div class="section__head reveal">
+        <span class="section__index mono">04</span>
+        <h2>Опыт и образование</h2>
+      </div>
+
+      <div class="places">
+        <article class="place place--orion reveal">
+          <div class="place__brand">
+            <img class="place__logo" src="assets/zvirt.svg" alt="zVirt" width="169" height="39">
+          </div>
+          <div class="place__caption">
+            <span class="mono">с апреля 2026</span>
+            <h3>Orion soft</h3>
+            <p>Младший пресейл-инженер</p>
+          </div>
+        </article>
+        <article class="place place--photo reveal">
+          <img src="assets/bmstu.jpg" alt="Стеклянные корпуса нового кампуса МГТУ им. Н. Э. Баумана" width="1400" height="933" loading="lazy">
+          <div class="place__caption place__caption--overlay">
+            <span class="mono">2024 — 2028</span>
+            <h3>МГТУ им. Н. Э. Баумана</h3>
+            <p>ИУ7 · Программная инженерия</p>
+          </div>
+        </article>
+      </div>
+
+      <ol class="timeline">
+        <li class="timeline__item reveal">
+          <span class="timeline__date mono">апрель 2026 — сейчас</span>
+          <div class="timeline__body">
+            <h3>Младший пресейл-инженер, Orion soft</h3>
+            <p class="muted">Российская экосистема виртуализации и инфраструктурного ПО</p>
+            <ul class="timeline__list">
+              <li>Изучил платформу серверной виртуализации zVirt.</li>
+              <li>Разобрался в программно-определяемых сетях (SDN).</li>
+              <li>Заметно прокачался в сетях и инфраструктуре в целом.</li>
+            </ul>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__date mono">2024 — 2028</span>
+          <div class="timeline__body">
+            <h3>МГТУ им. Н. Э. Баумана</h3>
+            <p class="muted">Информатика и системы управления · ИУ7 «Программная инженерия»</p>
+            <p>Высшее образование, очная форма, бюджет. Сейчас на 3 курсе.</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__date mono">июнь — август 2024</span>
+          <div class="timeline__body">
+            <h3>Преподаватель, ООО «Архимед»</h3>
+            <p class="muted">3D-печать и основы аэродинамики для старшеклассников</p>
+            <p>Вёл образовательные программы по прототипированию. Среди учеников есть победители и призёры заключительного этапа ВсОШ по технологии (направление «промышленный дизайн»).</p>
+          </div>
+        </li>
+        <li class="timeline__item reveal">
+          <span class="timeline__date mono">2023 — 2024</span>
+          <div class="timeline__body">
+            <h3>Всероссийская олимпиада школьников по технологии</h3>
+            <p>Победитель заключительного этапа в 2023 году и призёр в 2024 году с проектом углепластикового БПЛА.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="contact reveal">
+        <span class="section__index mono">05</span>
+        <h2>Давайте пообщаемся</h2>
+        <p class="contact__lead">Открыт к интересным проектам, стажировкам и знакомствам в разработке и инфраструктуре.</p>
+        <div class="contact__links">
+          <a class="contact__item" href="mailto:me@stanislavkholkin.ru">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
+            me@stanislavkholkin.ru
+          </a>
+          <a class="contact__item" href="tel:+79778152408">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2Z"/></svg>
+            +7 (977) 815-24-08
+          </a>
+          <a class="contact__item" href="https://github.com/AirStas" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 19c-4 1.5-4-2-6-2.5m12 5v-3.5a3 3 0 0 0-.9-2.4c3-.3 6.1-1.5 6.1-6.6a5.2 5.2 0 0 0-1.4-3.6 4.8 4.8 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.7 12.7 0 0 0-6.6 0C5.8 1.6 4.7 1.9 4.7 1.9a4.8 4.8 0 0 0-.1 3.6A5.2 5.2 0 0 0 3.2 9c0 5.1 3.1 6.3 6.1 6.6a3 3 0 0 0-.9 2.4V22"/></svg>
+            github.com/AirStas
+          </a>
+        </div>
+        <a class="btn btn--primary" href="assets/Kholkin_Stanislav_CV.pdf" download>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 19h16"/></svg>
+          Резюме в PDF
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ПОДВАЛ -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <p class="footer__name">Станислав Холькин</p>
+        <a class="footer__mail" href="mailto:me@stanislavkholkin.ru">me@stanislavkholkin.ru <span aria-hidden="true">↗</span></a>
+      </div>
+      <nav class="footer__col" aria-label="Разделы">
+        <p class="footer__title mono">Разделы</p>
+        <a href="#about">Обо мне</a>
+        <a href="#skills">Навыки</a>
+        <a href="#projects">Проекты</a>
+        <a href="#path">Опыт</a>
+      </nav>
+      <div class="footer__col">
+        <p class="footer__title mono">Связь</p>
+        <a href="https://github.com/AirStas" target="_blank" rel="noopener">GitHub</a>
+        <a href="tel:+79778152408">Телефон</a>
+        <a href="mailto:me@stanislavkholkin.ru">Почта</a>
+        <a href="assets/Kholkin_Stanislav_CV.pdf" download>Резюме, PDF</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>© <span id="year">2026</span> Станислав Холькин</span>
+      <a class="footer__top" href="#top">Наверх <span aria-hidden="true">↑</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
